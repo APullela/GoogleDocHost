@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Duel Arcade</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky" aria-hidden="true">
+    <canvas id="stars"></canvas>
+    <div class="pulse"></div>
+  </div>
+
+  <main id="menu" class="screen">
+    <header class="mast">
+      <h1>Duel Arcade</h1>
+      <svg class="flourish" viewBox="0 0 400 24" aria-hidden="true"><path d="M8 14 C 70 4, 120 22, 200 12 S 330 4, 392 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M196 12 l4 -5 4 5 -4 5 z" fill="currentColor"/></svg>
+      <p class="sub">a cabinet of small games, for one, two or four of you</p>
+    </header>
+
+    <nav class="actions">
+      <button id="btn-faceoff">Face-Off<small>a match of random games</small></button>
+      <button id="btn-random">Random Game<small>let the reel pick</small></button>
+      <button id="btn-settings">Settings<small>names, sound, background</small></button>
+    </nav>
+
+    <section class="shelf">
+      <h2>For two</h2>
+      <div class="cards" id="list-2p"></div>
+    </section>
+    <section class="shelf">
+      <h2>For one</h2>
+      <div class="cards" id="list-1p"></div>
+      <p class="aside">Dino, Snake, Flappy and Minesweeper can be played alone too. Pick one player on their setup page.</p>
+    </section>
+
+    <footer class="foot">Player one uses W A S D, player two the arrow keys. Esc goes back.</footer>
+  </main>
+
+  <section id="setup" class="screen hidden"></section>
+  <section id="fo-setup" class="screen hidden"></section>
+
+  <section id="roulette" class="screen hidden">
+    <div id="rl-top"></div>
+    <p class="kicker" id="rl-label"></p>
+    <div id="rl-reel" class="rl-reel"></div>
+    <div id="rl-after" class="rl-after hidden"></div>
+  </section>
+
+  <section id="final" class="screen hidden"></section>
+
+  <section id="game" class="screen hidden">
+    <div class="topbar">
+      <button class="btn small" id="back">Back</button>
+      <h2 id="game-title"></h2>
+      <span id="fo-tag" class="fo-tag"></span>
+      <div class="scoreboard" id="scoreboard"></div>
+      <button class="btn small" id="restart">Restart</button>
+    </div>
+    <div id="status"></div>
+    <div id="stage-wrap">
+      <div id="stage"></div>
+      <div id="overlay" class="overlay hidden"></div>
+    </div>
+    <div id="controls" class="controls-bar"></div>
+  </section>
+
+  <div id="settings" class="modal hidden"></div>
+
+  <script src="js/arcade.js"></script>
+  <script src="js/art.js"></script>
+  <script src="js/games/dino.js"></script>
+  <script src="js/games/pong.js"></script>
+  <script src="js/games/tron.js"></script>
+  <script src="js/games/snake.js"></script>
+  <script src="js/games/flappy.js"></script>
+  <script src="js/games/connect4.js"></script>
+  <script src="js/games/tictactoe.js"></script>
+  <script src="js/games/memory.js"></script>
+  <script src="js/games/reaction.js"></script>
+  <script src="js/games/minesweeper.js"></script>
+  <script src="js/games/g2048.js"></script>
+  <script src="js/games/breakout.js"></script>
+  <script src="js/games/simon.js"></script>
+  <script src="js/games/whack.js"></script>
+  <script>Arcade.init();</script>
+</body>
+</html>
